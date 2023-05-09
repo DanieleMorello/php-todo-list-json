@@ -2,7 +2,10 @@
 
 // var_dump($_POST);
 if (isset($_POST['new_task'])) {
-  $task = $_POST['new_task'];
+  $task = [
+    "text" => $_POST['new_task'],
+    "done" => false
+  ];
 
   // Legge il file json con file_get_contents
   $tasks_string = file_get_contents('tasks.json');
